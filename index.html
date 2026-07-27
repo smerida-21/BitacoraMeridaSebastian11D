@@ -83,7 +83,7 @@
             line-height: 1.4;
         }
 
-        /* Contenedor multimedia adaptable dentro de la tarjeta */
+        /* Contenedor multimedia adaptable */
         .media-container {
             width: 100%;
             margin-top: 15px;
@@ -94,17 +94,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            border: 1px solid #ddd;
         }
 
-        /* Estilo para Imágenes */
+        /* Estilo para la imagen previa del PDF */
         .media-container img {
             width: 100%;
-            height: auto;
+            height: 180px;
             display: block;
             object-fit: cover;
+            transition: transform 0.2s ease;
         }
 
-        /* Estilo para Videos (Ej. iframe de YouTube o video local) */
+        .media-container a:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Estilo para Videos */
         .media-container iframe, 
         .media-container video {
             width: 100%;
@@ -112,7 +118,7 @@
             border: none;
         }
 
-        /* Estilo para mostrar documentos PDF */
+        /* Estilo para mostrar documentos PDF en texto */
         .pdf-box {
             display: flex;
             align-items: center;
@@ -156,24 +162,27 @@
         <!-- Contenedor de las Tarjetas -->
         <div class="bitacora-grid">
             
-            <!-- Trabajo 1: Ejemplo con IMAGEN -->
+            <!-- Trabajo 1: PDF con IMAGEN PREVIA -->
             <div class="card">
                 <div>
-                    <h3>Trabajo 1: Infografía</h3>
-                    <p>Descripción del primer trabajo enfocado en diseño e imágenes.</p>
+                    <h3>Trabajo 1: Semana 1</h3>
+                    <p>Documento de la primera semana. Haz clic en la imagen previa para abrir el PDF completo.</p>
+                    
+                    <!-- Contenedor de la imagen que actúa como enlace al PDF -->
                     <div class="media-container">
-                        <img src="recursos/img/trabajo1.jpg" alt="Imagen Trabajo 1">
+                        <a href="recursos/pdf/trabajo1.pdf" target="_blank">
+                            <img src="recursos/img/previa-trabajo1.jpg" alt="Vista previa del PDF Semana 1">
+                        </a>
                     </div>
                 </div>
-                <a href="recursos/img/trabajo1.jpg" target="_blank" class="card-link">Ampliar imagen &rarr;</a>
+                <a href="recursos/pdf/trabajo1.pdf" target="_blank" class="card-link">Ver PDF completo &rarr;</a>
             </div>
 
-            <!-- Trabajo 2: Ejemplo con PDF -->
+            <!-- Trabajo 2: Ejemplo con PDF (Estándar) -->
             <div class="card">
                 <div>
-                    <h3>Trabajo 2: Documento Teórico</h3>
+                    <h3>Trabajo 2: Semana 2</h3>
                     <p>Investigación detallada guardada en formato PDF.</p>
-                    <!-- Enlace directo para abrir el PDF -->
                     <a href="recursos/pdf/trabajo2.pdf" target="_blank" class="pdf-box">
                         📄 Ver documento PDF completo
                     </a>
@@ -184,10 +193,9 @@
             <!-- Trabajo 3: Ejemplo con VIDEO (YouTube) -->
             <div class="card">
                 <div>
-                    <h3>Trabajo 3: Exposición</h3>
+                    <h3>Trabajo 3: Semana 3</h3>
                     <p>Video explicativo sobre el proyecto desarrollado.</p>
                     <div class="media-container">
-                        <!-- Cambia el link src por el código embed de tu video de YouTube -->
                         <iframe src="https://www.youtube.com/embed/TU_VIDEO_ID" title="Video Trabajo 3" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -197,7 +205,7 @@
             <!-- Trabajo 4: Ejemplo con IMAGEN -->
             <div class="card">
                 <div>
-                    <h3>Trabajo 4: Captura de Código</h3>
+                    <h3>Trabajo 4: Semana 4</h3>
                     <p>Evidencia visual de la estructura y programación realizada.</p>
                     <div class="media-container">
                         <img src="recursos/img/trabajo4.jpg" alt="Imagen Trabajo 4">
@@ -209,7 +217,7 @@
             <!-- Trabajo 5: Ejemplo con PDF -->
             <div class="card">
                 <div>
-                    <h3>Trabajo 5: Reporte de Práctica</h3>
+                    <h3>Trabajo 5: Semana 5</h3>
                     <p>Informe paso a paso de los resultados obtenidos en la práctica.</p>
                     <a href="recursos/pdf/trabajo5.pdf" target="_blank" class="pdf-box">
                         📄 Ver reporte en PDF
@@ -218,10 +226,10 @@
                 <a href="recursos/pdf/trabajo5.pdf" target="_blank" class="card-link">Ver archivo &rarr;</a>
             </div>
 
-            <!-- Trabajo 6: Ejemplo con VIDEO local o embebido -->
+            <!-- Trabajo 6: Ejemplo con VIDEO local -->
             <div class="card">
                 <div>
-                    <h3>Trabajo 6: Demostración</h3>
+                    <h3>Trabajo 6: Semana 6</h3>
                     <p>Demostración en video del funcionamiento del sistema.</p>
                     <div class="media-container">
                         <video controls>
@@ -233,10 +241,10 @@
                 <a href="#" class="card-link">Ver trabajo &rarr;</a>
             </div>
 
-            <!-- Trabajo 7: Ejemplo Mixto / Libre -->
+            <!-- Trabajo 7: Ejemplo con Imagen/Proyecto Final -->
             <div class="card">
                 <div>
-                    <h3>Trabajo 7: Conclusión Final</h3>
+                    <h3>Trabajo 7: Semana 7</h3>
                     <p>Proyecto integrador de cierre de la segunda y tercera unidad.</p>
                     <div class="media-container">
                         <img src="recursos/img/trabajo7.jpg" alt="Proyecto Final">
