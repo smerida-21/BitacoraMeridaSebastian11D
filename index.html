@@ -6,7 +6,6 @@
     <title>Bitácora Sebastián Mérida</title>
     <link rel="icon" href="recursos/img/LCB.png" type="image/png">
     <style>
-        /*CSS-es un lenguaje de programacion(Diseñar en cascada)*/
         html, body{
             height: 100%;
             margin: 0;
@@ -21,12 +20,14 @@
             padding: 20px;
             background-color: orange;
             color: antiquewhite;
-            }
+        }
         main{
             flex: 1;
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
             background-color: aliceblue;
         }
         footer{
@@ -44,15 +45,104 @@
                 padding: 20px;
             }
         }
-        main h1{
-            color: white;
+        header h1{
+            margin: 0;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 
-                0 0 5px white
-                0 0 10px antiquewhite
-                0 0 20px rgb(252, 222, 184)
-            ;
+        }
+
+        /* --- ESTILOS PARA LAS TARJETAS (GRID DE BITÁCORA) --- */
+        .bitacora-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-left: 5px solid orange;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Contenedor multimedia adaptable dentro de la tarjeta */
+        .media-container {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Estilo para Imágenes */
+        .media-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Estilo para Videos (Ej. iframe de YouTube o video local) */
+        .media-container iframe, 
+        .media-container video {
+            width: 100%;
+            height: 180px;
+            border: none;
+        }
+
+        /* Estilo para mostrar documentos PDF */
+        .pdf-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background-color: #fff3e0;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #d84315;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            transition: background-color 0.2s;
+        }
+
+        .pdf-box:hover {
+            background-color: #ffe0b2;
+        }
+
+        .card-link {
+            display: inline-block;
+            margin-top: auto;
+            color: orange;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -61,11 +151,105 @@
         <h1>Bitácora segunda y tercera Unidad</h1>
     </header>
     <main>
-        <h4>Contenido de la pagina WEB</h4>
+        <h2>Mis 7 Trabajos de la Unidad</h2>
+        
+        <!-- Contenedor de las Tarjetas -->
+        <div class="bitacora-grid">
+            
+            <!-- Trabajo 1: Ejemplo con IMAGEN -->
+            <div class="card">
+                <div>
+                    <h3>Trabajo 1: Infografía</h3>
+                    <p>Descripción del primer trabajo enfocado en diseño e imágenes.</p>
+                    <div class="media-container">
+                        <img src="recursos/img/trabajo1.jpg" alt="Imagen Trabajo 1">
+                    </div>
+                </div>
+                <a href="recursos/img/trabajo1.jpg" target="_blank" class="card-link">Ampliar imagen &rarr;</a>
+            </div>
+
+            <!-- Trabajo 2: Ejemplo con PDF -->
+            <div class="card">
+                <div>
+                    <h3>Trabajo 2: Documento Teórico</h3>
+                    <p>Investigación detallada guardada en formato PDF.</p>
+                    <!-- Enlace directo para abrir el PDF -->
+                    <a href="recursos/pdf/trabajo2.pdf" target="_blank" class="pdf-box">
+                        📄 Ver documento PDF completo
+                    </a>
+                </div>
+                <a href="recursos/pdf/trabajo2.pdf" target="_blank" class="card-link">Descargar PDF &rarr;</a>
+            </div>
+
+            <!-- Trabajo 3: Ejemplo con VIDEO (YouTube) -->
+            <div class="card">
+                <div>
+                    <h3>Trabajo 3: Exposición</h3>
+                    <p>Video explicativo sobre el proyecto desarrollado.</p>
+                    <div class="media-container">
+                        <!-- Cambia el link src por el código embed de tu video de YouTube -->
+                        <iframe src="https://www.youtube.com/embed/TU_VIDEO_ID" title="Video Trabajo 3" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com" target="_blank" class="card-link">Ver en YouTube &rarr;</a>
+            </div>
+
+            <!-- Trabajo 4: Ejemplo con IMAGEN -->
+            <div class="card">
+                <div>
+                    <h3>Trabajo 4: Captura de Código</h3>
+                    <p>Evidencia visual de la estructura y programación realizada.</p>
+                    <div class="media-container">
+                        <img src="recursos/img/trabajo4.jpg" alt="Imagen Trabajo 4">
+                    </div>
+                </div>
+                <a href="#" class="card-link">Ver detalles &rarr;</a>
+            </div>
+
+            <!-- Trabajo 5: Ejemplo con PDF -->
+            <div class="card">
+                <div>
+                    <h3>Trabajo 5: Reporte de Práctica</h3>
+                    <p>Informe paso a paso de los resultados obtenidos en la práctica.</p>
+                    <a href="recursos/pdf/trabajo5.pdf" target="_blank" class="pdf-box">
+                        📄 Ver reporte en PDF
+                    </a>
+                </div>
+                <a href="recursos/pdf/trabajo5.pdf" target="_blank" class="card-link">Ver archivo &rarr;</a>
+            </div>
+
+            <!-- Trabajo 6: Ejemplo con VIDEO local o embebido -->
+            <div class="card">
+                <div>
+                    <h3>Trabajo 6: Demostración</h3>
+                    <p>Demostración en video del funcionamiento del sistema.</p>
+                    <div class="media-container">
+                        <video controls>
+                            <source src="recursos/video/trabajo6.mp4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </div>
+                </div>
+                <a href="#" class="card-link">Ver trabajo &rarr;</a>
+            </div>
+
+            <!-- Trabajo 7: Ejemplo Mixto / Libre -->
+            <div class="card">
+                <div>
+                    <h3>Trabajo 7: Conclusión Final</h3>
+                    <p>Proyecto integrador de cierre de la segunda y tercera unidad.</p>
+                    <div class="media-container">
+                        <img src="recursos/img/trabajo7.jpg" alt="Proyecto Final">
+                    </div>
+                </div>
+                <a href="#" class="card-link">Ver proyecto final &rarr;</a>
+            </div>
+
+        </div>
     </main>
     <footer>
         <samp>@meridass_</samp>
-        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" height="50" width="200">
+        <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" height="50" width="200" alt="Logo Colegio">
     </footer>
 </body>
 </html>
